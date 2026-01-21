@@ -1,0 +1,50 @@
+<section class="py-24 bg-black relative overflow-hidden">
+    <!-- Top Gradient / Shine -->
+    <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-40 bg-white/[0.02] blur-3xl pointer-events-none">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <!-- New Header Section -->
+        <div class="mb-32">
+            <div class="max-w-4xl">
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                    Our Comprehensive <span class="text-neutral-500">Digital</span><br>
+                    <span class="text-neutral-500">Solutions</span>
+                </h2>
+                <p class="text-neutral-400 text-lg sm:text-lg leading-relaxed max-w-2xl mb-12">
+                    At DigitX, we offer a comprehensive suite of digital solutions designed to propel your business to
+                    new heights in the
+                    digital realm. With a team of skilled professionals, cutting-edge technologies, and a passion for
+                    innovation, we are
+                    committed to delivering exceptional results for every project we undertake. From captivating web
+                    design that leaves
+                    a lasting impression to seamless web development that ensures optimal functionality, we cover every
+                    aspect of your
+                    online presence.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- Services List Header -->
+        <div class="text-center mb-16">
+            <h3 class="text-3xl sm:text-4xl font-bold text-white">
+                <span class="text-neutral-500">Our</span> Services
+            </h3>
+            <p class="text-neutral-400 mt-4 max-w-2xl mx-auto">
+                At DigitX, we are committed to providing exceptional digital solutions tailored to suit your unique
+                business needs. Our comprehensive service offerings cover a wide spectrum of digital disciplines,
+                including web design, app development, web development, and marketing.
+            </p>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <app-service-card *ngFor="let service of services" [title]="service.title"
+                [description]="service.description" [iconName]="service.icon" [price]="service.price"
+                [buttonText]="service.buttonText" class="h-full block">
+            </app-service-card>
+        </div>
+    </div>
+</section>

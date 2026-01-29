@@ -1,12 +1,12 @@
-<div class="pt-24 pb-20 bg-black min-h-screen">
+<div class="pt-24 pb-20 bg-[var(--bg-dark)] min-h-screen">
 
     <!-- Header / Vision Section -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-32">
         <div class="text-center max-w-4xl mx-auto">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
-                Elevating Brands <span class="text-neutral-500">in the Digital Age</span>
+            <h1 class="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-6">
+                Elevating Brands <span class="text-[var(--text-primary)]/50">in the Digital Age</span>
             </h1>
-            <p class="text-neutral-400 leading-relaxed text-sm sm:text-base mb-8">
+            <p class="text-[var(--text-primary)]/60 leading-relaxed text-sm sm:text-base mb-8">
                 Welcome to Cycsol, your trusted partner in the dynamic world of digital solutions. We are a passionate
                 team of creative minds, tech enthusiasts, and digital strategists, dedicated to empowering businesses
                 and individuals in the digital realm. Our mission is to deliver exceptional results that drive success,
@@ -20,10 +20,10 @@
     <!-- Team Members Section -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-white">
-                Our <span class="text-white">Team Members</span>
+            <h2 class="text-3xl font-bold text-[var(--text-primary)]">
+                Our <span class="text-[var(--text-primary)]">Team Members</span>
             </h2>
-            <p class="text-neutral-400 mt-4 max-w-2xl mx-auto text-sm">
+            <p class="text-[var(--text-primary)]/60 mt-4 max-w-2xl mx-auto text-sm">
                 Partnering with Cycsol offers a multitude of advantages. Experience increased brand visibility, improved
                 customer engagement, and higher ROI. Our tailored solutions are designed to meet your unique business
                 needs, ensuring lasting success.
@@ -33,54 +33,59 @@
         <!-- Team Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div *ngFor="let member of teamMembers"
-                class="bg-[#0f0f0f] border border-white/5 p-8 rounded-3xl text-center group hover:border-white/10 transition-all duration-300 relative overflow-hidden">
+                class="bg-[var(--text-primary)]/5 border border-[var(--text-primary)]/5 p-8 rounded-3xl text-center group hover:border-[var(--text-primary)]/10 transition-all duration-300 relative overflow-hidden">
                 <!-- Background Decoration -->
                 <div
-                    class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    class="absolute inset-0 bg-gradient-to-b from-transparent to-[var(--bg-dark)]/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
 
                 <!-- Image (Placeholder Avatar for now) -->
                 <div
-                    class="w-24 h-24 mx-auto bg-[#1a1a1a] rounded-full mb-6 overflow-hidden border-2 border-transparent group-hover:border-white/20 transition-all">
+                    class="w-24 h-24 mx-auto bg-[var(--text-primary)]/10 rounded-full mb-6 overflow-hidden border-2 border-transparent group-hover:border-[var(--text-primary)]/20 transition-all">
                     <!-- If real images existed: <img [src]="member.image" class="w-full h-full object-cover"> -->
-                    <svg class="w-full h-full text-neutral-600 p-4" fill="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-full h-full text-[var(--text-primary)]/30 p-4" fill="currentColor"
+                        viewBox="0 0 24 24">
                         <path
                             d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                     </svg>
                 </div>
 
-                <h3 class="text-white font-bold text-lg mb-2">{{ member.name }}</h3>
+                <h3 class="text-[var(--text-primary)] font-bold text-lg mb-2">{{ member.name }}</h3>
 
-                <div class="inline-block px-4 py-1.5 rounded-full bg-[#1a1a1a] border border-white/5 mb-6">
-                    <span class="text-neutral-400 text-xs font-medium">{{ member.role }}</span>
+                <div
+                    class="inline-block px-4 py-1.5 rounded-full bg-[var(--text-primary)]/10 border border-[var(--text-primary)]/5 mb-6">
+                    <span class="text-[var(--text-primary)]/60 text-xs font-medium">{{ member.role }}</span>
                 </div>
 
                 <!-- Contact Actions -->
                 <div class="flex justify-center gap-4 mt-auto relative z-10">
                     <!-- Phone -->
                     <a [href]="'tel:' + member.phone" *ngIf="member.phone"
-                        class="w-8 h-8 rounded-full bg-[#1a1a1a] flex items-center justify-center text-neutral-400 hover:bg-white hover:text-black transition-all"
+                        class="w-8 h-8 rounded-full bg-[var(--text-primary)]/10 flex items-center justify-center text-[var(--text-primary)]/60 hover:bg-[var(--text-primary)] hover:text-[var(--bg-dark)] transition-all"
                         title="Call">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                         </svg>
                     </a>
 
                     <!-- Email -->
                     <a [href]="'mailto:' + member.email" *ngIf="member.email"
-                        class="w-8 h-8 rounded-full bg-[#1a1a1a] flex items-center justify-center text-neutral-400 hover:bg-white hover:text-black transition-all"
+                        class="w-8 h-8 rounded-full bg-[var(--text-primary)]/10 flex items-center justify-center text-[var(--text-primary)]/60 hover:bg-[var(--text-primary)] hover:text-[var(--bg-dark)] transition-all"
                         title="Email">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                         </svg>
                     </a>
 
                     <!-- Social Link -->
                     <a [href]="member.link" target="_blank" *ngIf="member.link"
-                        class="w-8 h-8 rounded-full bg-[#1a1a1a] flex items-center justify-center text-neutral-400 hover:bg-white hover:text-black transition-all"
+                        class="w-8 h-8 rounded-full bg-[var(--text-primary)]/10 flex items-center justify-center text-[var(--text-primary)]/60 hover:bg-[var(--text-primary)] hover:text-[var(--bg-dark)] transition-all"
                         title="Profile">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg>
                     </a>
                 </div>

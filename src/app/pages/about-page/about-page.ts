@@ -23,7 +23,7 @@ export class AboutPage {
       role: 'Director/CFO',
       phone: '03038222407',
       email: 'cycsol.pk@gmail.com',
-      link: '',
+      link: 'https://veldora-studio.slack.com/archives/D082YBL4EUX/p1769666892350939',
       image: 'assets/team/muneeb.jpg',
     },
     {
@@ -55,7 +55,7 @@ export class AboutPage {
       role: 'Graphic Designer',
       phone: '03041302051',
       email: 'ilyasramzanart@gmail.com',
-      link: '',
+      link: 'https://www.linkedin.com/in/illyas-ramzan-893a9233a/',
       image: 'assets/team/ilyas.jpg',
     },
   ];

@@ -1,4 +1,4 @@
-<div class="pt-24 pb-20 bg-black min-h-screen">
+<div class="pt-24 pb-20 min-h-screen">
 
     <!-- "Our Services" Grid Section (Existing) -->
     <app-services></app-services>
@@ -7,9 +7,9 @@
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-32">
         <!-- Header -->
         <div class="text-center mb-16">
-            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Categories of <span
-                    class="text-white">Services</span></h2>
-            <p class="text-neutral-400 max-w-3xl mx-auto text-sm sm:text-base">
+            <h2 class="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-4">Categories of <span
+                    class="text-[var(--text-primary)]">Services</span></h2>
+            <p class="text-[var(--text-primary)]/60 max-w-3xl mx-auto text-sm sm:text-base">
                 At Cycsol, we are committed to providing exceptional digital solutions tailored to suit your unique
                 business needs. Our comprehensive service offerings cover a wide spectrum of digital disciplines.
             </p>
@@ -19,7 +19,7 @@
         <div class="lg:hidden mb-12 -mx-4 px-4 overflow-x-auto no-scrollbar flex gap-3 pb-2">
             <button *ngFor="let cat of categories" (click)="setActiveCategory(cat.id)"
                 class="flex-shrink-0 flex items-center gap-3 px-5 py-3 rounded-xl border transition-all duration-300 text-left whitespace-nowrap"
-                [ngClass]="activeCategoryId === cat.id ? 'bg-[#1a1a1a] border-white/10 text-white' : 'bg-transparent border-white/5 text-neutral-500 hover:bg-white/5 hover:text-white'">
+                [ngClass]="activeCategoryId === cat.id ? 'bg-[var(--accent-primary)]/10 border-[var(--accent-primary)]/20 text-[var(--accent-primary)]' : 'bg-transparent border-[var(--text-primary)]/5 text-[var(--text-primary)]/50 hover:bg-[var(--text-primary)]/5 hover:text-[var(--text-primary)]'">
 
                 <!-- Icon -->
                 <span class="w-5 h-5 flex items-center justify-center">
@@ -93,7 +93,7 @@
                 <div class="flex flex-col gap-4 sticky top-32">
                     <button *ngFor="let cat of categories" (click)="setActiveCategory(cat.id)"
                         class="flex items-center gap-4 px-6 py-4 rounded-xl border transition-all duration-300 text-left group"
-                        [ngClass]="activeCategoryId === cat.id ? 'bg-[#1a1a1a] border-white/10 text-white' : 'bg-transparent border-transparent text-neutral-500 hover:bg-white/5 hover:text-white'">
+                        [ngClass]="activeCategoryId === cat.id ? 'bg-[var(--accent-primary)]/10 border-[var(--accent-primary)]/20 text-[var(--accent-primary)]' : 'bg-transparent border-transparent text-[var(--text-primary)]/50 hover:bg-[var(--text-primary)]/5 hover:text-[var(--text-primary)]'">
 
                         <!-- Icon -->
                         <span class="w-6 h-6 flex items-center justify-center">
@@ -165,63 +165,71 @@
             <div class="lg:w-3/4">
                 <!-- Title & Desc -->
                 <div class="mb-16">
-                    <h3 class="text-2xl font-bold text-white mb-6">{{ activeCategory.name }}</h3>
-                    <p class="text-neutral-400 leading-relaxed text-sm sm:text-base">
+                    <h3 class="text-2xl font-bold text-[var(--text-primary)] mb-6">{{ activeCategory.name }}</h3>
+                    <p class="text-[var(--text-primary)]/60 leading-relaxed text-sm sm:text-base">
                         {{ activeCategory.description }}
                     </p>
                 </div>
 
                 <!-- Key Features -->
                 <div class="mb-16">
-                    <h4 class="text-xl font-bold text-white mb-8">Key Features</h4>
+                    <h4 class="text-xl font-bold text-[var(--text-primary)] mb-8">Key Features</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                         <div *ngFor="let feature of activeCategory.features">
-                            <h5 class="text-white font-bold mb-3 text-sm">{{ feature.title }}</h5>
-                            <p class="text-neutral-500 text-sm leading-relaxed">{{ feature.description }}</p>
+                            <h5 class="text-[var(--text-primary)] font-bold mb-3 text-sm">{{ feature.title }}</h5>
+                            <p class="text-[var(--text-primary)]/50 text-sm leading-relaxed">{{ feature.description }}
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Design Process -->
                 <div class="mb-16">
-                    <h4 class="text-xl font-bold text-white mb-8">Design Process</h4>
-                    <div class="bg-[#0f0f0f] border border-white/5 rounded-3xl p-8 sm:p-10">
-                        <p class="text-neutral-400 mb-8 text-sm">
+                    <h4 class="text-xl font-bold text-[var(--text-primary)] mb-8">Design Process</h4>
+                    <div
+                        class="bg-[var(--secondary-primary)]/5 border border-[var(--secondary-primary)]/10 rounded-3xl p-8 sm:p-10">
+                        <p class="text-[var(--text-primary)]/60 mb-8 text-sm">
                             Our {{ activeCategory.name }} process follows a systematic approach to deliver results that
                             align perfectly with your business needs.
                         </p>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
                             <div *ngFor="let step of activeCategory.process" class="relative">
                                 <!-- Dot decoration -->
-                                <div class="w-2 h-2 rounded-full bg-white mb-4"></div>
-                                <h5 class="text-white font-bold mb-2 text-sm">{{ step.title }}</h5>
-                                <p class="text-neutral-500 text-sm leading-relaxed">{{ step.description }}</p>
+                                <div class="w-2 h-2 rounded-full bg-[var(--secondary-primary)] mb-4"></div>
+                                <h5 class="text-[var(--text-primary)] font-bold mb-2 text-sm">{{ step.title }}</h5>
+                                <p class="text-[var(--text-primary)]/50 text-sm leading-relaxed">{{ step.description }}
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Portfolio Section -->
-                <div class="mb-16" *ngIf="activeCategory.portfolioImages?.length">
-                    <h4 class="text-xl font-bold text-white mb-2">{{ activeCategory.name }} Portfolio</h4>
-                    <p class="text-neutral-400 mb-8 text-sm">Check out some of our most recent {{ activeCategory.name }}
+                <div class="mb-16" *ngIf="activeCategory.portfolioImages.length">
+                    <h4 class="text-xl font-bold text-[var(--text-primary)] mb-2">{{ activeCategory.name }} Portfolio
+                    </h4>
+                    <p class="text-[var(--text-primary)]/60 mb-8 text-sm">Check out some of our most recent {{
+                        activeCategory.name }}
                         projects in the table below</p>
 
-                    <div class="bg-[#0f0f0f] border border-white/5 rounded-3xl p-6 sm:p-8">
+                    <div
+                        class="bg-[var(--text-primary)]/5 border border-[var(--text-primary)]/5 rounded-3xl p-6 sm:p-8">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                             <div *ngFor="let img of activeCategory.portfolioImages"
-                                class="rounded-xl overflow-hidden h-48 sm:h-64 bg-[#1a1a1a] relative group">
+                                class="rounded-xl overflow-hidden h-48 sm:h-64 bg-[var(--text-primary)]/10 relative group">
                                 <!-- Placeholder for actual image -->
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-[var(--bg-dark)]/80 to-transparent">
+                                </div>
                                 <div class="absolute bottom-4 left-4">
-                                    <span class="text-white text-sm font-medium">Create Digital Presence</span>
+                                    <span class="text-[var(--text-primary)] text-sm font-medium">Create Digital
+                                        Presence</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="flex justify-center">
                             <button
-                                class="px-6 py-3 rounded-full border border-white/10 bg-[#1a1a1a] hover:bg-[#252525] text-white text-sm font-medium transition-all flex items-center gap-2">
+                                class="px-6 py-3 rounded-full border border-[var(--secondary-primary)]/20 bg-[var(--secondary-primary)]/10 hover:bg-[var(--secondary-primary)]/20 text-[var(--text-primary)] text-sm font-medium transition-all flex items-center gap-2">
                                 View All Projects
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -233,31 +241,34 @@
                 </div>
 
                 <!-- Completed Projects Table -->
-                <div *ngIf="activeCategory.completedProjects?.length">
-                    <h4 class="text-xl font-bold text-white mb-2">Our {{ activeCategory.name }} Completed Projects</h4>
-                    <p class="text-neutral-400 mb-8 text-sm">
+                <div *ngIf="activeCategory.completedProjects.length">
+                    <h4 class="text-xl font-bold text-[var(--text-primary)] mb-2">Our {{ activeCategory.name }}
+                        Completed Projects</h4>
+                    <p class="text-[var(--text-primary)]/60 mb-8 text-sm">
                         At Cycsol, we are dedicated to creating transformative mobile apps that empower your business
                         and enrich your users' experiences.
                     </p>
 
-                    <div class="bg-[#0f0f0f] border border-white/5 rounded-3xl overflow-hidden">
+                    <div
+                        class="bg-[var(--text-primary)]/5 border border-[var(--text-primary)]/5 rounded-3xl overflow-hidden">
                         <div class="overflow-x-auto">
-                            <table class="w-full text-left text-sm text-neutral-400">
-                                <thead class="bg-[#1a1a1a] text-white font-medium">
+                            <table class="w-full text-left text-sm text-[var(--text-primary)]/60">
+                                <thead class="bg-[var(--secondary-primary)]/10 text-[var(--text-primary)] font-medium">
                                     <tr>
                                         <th class="px-6 py-4">Project Name</th>
                                         <th class="px-6 py-4">Industry</th>
                                         <th class="px-6 py-4">Website URL</th>
                                     </tr>
                                 </thead>
-                                <tbody class="divide-y divide-white/5">
+                                <tbody class="divide-y divide-[var(--text-primary)]/5">
                                     <tr *ngFor="let project of activeCategory.completedProjects"
-                                        class="hover:bg-white/5 transition-colors">
-                                        <td class="px-6 py-4 text-white font-medium">{{ project.name }}</td>
+                                        class="hover:bg-[var(--text-primary)]/5 transition-colors">
+                                        <td class="px-6 py-4 text-[var(--text-primary)] font-medium">{{ project.name }}
+                                        </td>
                                         <td class="px-6 py-4">{{ project.industry }}</td>
                                         <td class="px-6 py-4">
                                             <a [href]="'https://' + project.url" target="_blank"
-                                                class="text-neutral-400 hover:text-white underline decoration-white/30 hover:decoration-white transition-all">
+                                                class="text-[var(--text-primary)]/60 hover:text-[var(--text-primary)] underline decoration-[var(--text-primary)]/30 hover:decoration-[var(--text-primary)] transition-all">
                                                 {{ project.url }}
                                             </a>
                                         </td>

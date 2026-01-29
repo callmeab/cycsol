@@ -1,44 +1,58 @@
-<nav class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+<nav
+  class="fixed top-0 left-0 w-full z-50 bg-[var(--bg-dark)]/80 backdrop-blur-md border-b border-[var(--text-primary)]/10">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <a href="#" class="text-white text-3xl font-bold tracking-tighter">Cycsol</a>
+        <a routerLink="/" class="text-[var(--text-primary)] text-3xl font-bold tracking-tighter cursor-pointer"><img
+            src="/logo.svg" alt=""></a>
       </div>
 
       <!-- Desktop Menu -->
       <div class="hidden md:block">
         <div class="ml-10 flex items-baseline space-x-8">
-          <a routerLink="/" routerLinkActive="bg-white/10 text-white" [routerLinkActiveOptions]="{exact: true}"
-            class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer">Home</a>
-          <a routerLink="/services" routerLinkActive="bg-white/10 text-white"
-            class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer">Services</a>
-          <a routerLink="/projects" routerLinkActive="bg-white/10 text-white"
-            class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer">Projects</a>
-          <a routerLink="/about" routerLinkActive="bg-white/10 text-white"
-            class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer">About
-            Us</a>
-          <a routerLink="/contact" routerLinkActive="bg-white/10 text-white"
-            class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer">Contact
-            Us</a>
-          <!-- <a href="#"
-            class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Careers</a>
-          <a href="#"
-            class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Blogs</a> -->
+          <a routerLink="/" routerLinkActive="text-[var(--text-primary)]" [routerLinkActiveOptions]="{exact: true}"
+            class="relative text-[var(--text-primary)]/70 hover:text-[var(--text-primary)] px-3 py-2 text-sm font-medium transition-colors cursor-pointer group">
+            Home
+            <span
+              class="absolute bottom-0 left-0 w-full h-0.5 bg-[var(--accent-primary)] transform scale-x-0 transition-transform duration-300 group-[.text-\[var\(--text-primary\)\]]:scale-x-100"></span>
+          </a>
+          <a routerLink="/services" routerLinkActive="text-[var(--text-primary)]"
+            class="relative text-[var(--text-primary)]/70 hover:text-[var(--text-primary)] px-3 py-2 text-sm font-medium transition-colors cursor-pointer group">
+            Services
+            <span
+              class="absolute bottom-0 left-0 w-full h-0.5 bg-[var(--accent-primary)] transform scale-x-0 transition-transform duration-300 group-[.text-\[var\(--text-primary\)\]]:scale-x-100"></span>
+          </a>
+          <a routerLink="/projects" routerLinkActive="text-[var(--text-primary)]"
+            class="relative text-[var(--text-primary)]/70 hover:text-[var(--text-primary)] px-3 py-2 text-sm font-medium transition-colors cursor-pointer group">
+            Projects
+            <span
+              class="absolute bottom-0 left-0 w-full h-0.5 bg-[var(--accent-primary)] transform scale-x-0 transition-transform duration-300 group-[.text-\[var\(--text-primary\)\]]:scale-x-100"></span>
+          </a>
+          <a routerLink="/about" routerLinkActive="text-[var(--text-primary)]"
+            class="relative text-[var(--text-primary)]/70 hover:text-[var(--text-primary)] px-3 py-2 text-sm font-medium transition-colors cursor-pointer group">
+            About Us
+            <span
+              class="absolute bottom-0 left-0 w-full h-0.5 bg-[var(--accent-primary)] transform scale-x-0 transition-transform duration-300 group-[.text-\[var\(--text-primary\)\]]:scale-x-100"></span>
+          </a>
+          <a routerLink="/contact" routerLinkActive="text-[var(--text-primary)]"
+            class="relative text-[var(--text-primary)]/70 hover:text-[var(--text-primary)] px-3 py-2 text-sm font-medium transition-colors cursor-pointer group">
+            Contact Us
+            <span
+              class="absolute bottom-0 left-0 w-full h-0.5 bg-[var(--accent-primary)] transform scale-x-0 transition-transform duration-300 group-[.text-\[var\(--text-primary\)\]]:scale-x-100"></span>
+          </a>
         </div>
       </div>
 
       <!-- Mobile Menu Button -->
       <div class="-mr-2 flex md:hidden">
         <button (click)="toggleMenu()" type="button"
-          class="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+          class="bg-[var(--text-primary)]/10 inline-flex items-center justify-center p-2 rounded-md text-[var(--text-primary)]/60 hover:text-[var(--text-primary)] hover:bg-[var(--text-primary)]/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[var(--bg-dark)] focus:ring-[var(--text-primary)]">
           <span class="sr-only">Open main menu</span>
-          <!-- Heroicon name: menu -->
           <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" aria-hidden="true" *ngIf="!isMenuOpen">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
-          <!-- Heroicon name: x -->
           <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" aria-hidden="true" *ngIf="isMenuOpen">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -49,23 +63,25 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div class="md:hidden bg-black/95 backdrop-blur-xl" *ngIf="isMenuOpen">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-800">
-      <a routerLink="/" routerLinkActive="bg-white/10 text-white" [routerLinkActiveOptions]="{exact: true}"
+  <div class="md:hidden bg-[var(--bg-dark)]/95 backdrop-blur-xl" *ngIf="isMenuOpen">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-[var(--text-primary)]/10">
+      <a routerLink="/" routerLinkActive="text-[var(--text-primary)] bg-[var(--accent-primary)]/10"
+        [routerLinkActiveOptions]="{exact: true}" (click)="toggleMenu()"
+        class="text-[var(--text-primary)]/70 hover:text-[var(--text-primary)] block px-3 py-2 rounded-md text-base font-medium cursor-pointer">Home</a>
+      <a routerLink="/services" routerLinkActive="text-[var(--text-primary)] bg-[var(--accent-primary)]/10"
         (click)="toggleMenu()"
-        class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium cursor-pointer">Home</a>
-      <a routerLink="/services" routerLinkActive="bg-white/10 text-white" (click)="toggleMenu()"
-        class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium cursor-pointer">Services</a>
-      <a routerLink="/projects" routerLinkActive="bg-white/10 text-white" (click)="toggleMenu()"
-        class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium cursor-pointer">Projects</a>
-      <a routerLink="/about" routerLinkActive="bg-white/10 text-white" (click)="toggleMenu()"
-        class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium cursor-pointer">About
+        class="text-[var(--text-primary)]/70 hover:text-[var(--text-primary)] block px-3 py-2 rounded-md text-base font-medium cursor-pointer">Services</a>
+      <a routerLink="/projects" routerLinkActive="text-[var(--text-primary)] bg-[var(--accent-primary)]/10"
+        (click)="toggleMenu()"
+        class="text-[var(--text-primary)]/70 hover:text-[var(--text-primary)] block px-3 py-2 rounded-md text-base font-medium cursor-pointer">Projects</a>
+      <a routerLink="/about" routerLinkActive="text-[var(--text-primary)] bg-[var(--accent-primary)]/10"
+        (click)="toggleMenu()"
+        class="text-[var(--text-primary)]/70 hover:text-[var(--text-primary)] block px-3 py-2 rounded-md text-base font-medium cursor-pointer">About
         Us</a>
-      <a routerLink="/contact" routerLinkActive="bg-white/10 text-white" (click)="toggleMenu()"
-        class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium cursor-pointer">Contact
+      <a routerLink="/contact" routerLinkActive="text-[var(--text-primary)] bg-[var(--accent-primary)]/10"
+        (click)="toggleMenu()"
+        class="text-[var(--text-primary)]/70 hover:text-[var(--text-primary)] block px-3 py-2 rounded-md text-base font-medium cursor-pointer">Contact
         Us</a>
-
-
     </div>
   </div>
 </nav>

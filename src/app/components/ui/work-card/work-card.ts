@@ -10,8 +10,11 @@ import { CommonModule } from '@angular/common';
 })
 export class WorkCard {
   @Input() title = '';
+  @Input() role = '';
   @Input() category = '';
   @Input() date = '';
+  @Input() type = '';
+  @Input() tags: string[] = [];
   @Input() description = '';
   @Input() image = '';
 }

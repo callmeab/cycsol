@@ -1,54 +1,76 @@
-<div class="group cursor-pointer">
-    <!-- Image Container -->
+<div class="group cursor-pointer flex flex-col h-full">
+  <!-- Image / Visual Container -->
+  <div
+    class="relative h-52 sm:h-60 w-full mb-6 rounded-2xl overflow-hidden bg-[var(--text-primary)]/5 border border-[var(--secondary-primary)]/10 flex items-center justify-center"
+  >
+    <!-- Type Badge (Web / Mobile / etc.) -->
+    <span
+      *ngIf="type"
+      class="absolute top-4 left-4 z-10 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-[var(--accent-primary)]/20 text-[var(--text-primary)]/70 border border-[var(--accent-primary)]/30"
+    >
+      {{ type }}
+    </span>
+
+    <!-- Geometric SVG icon -->
+    <svg
+      class="w-24 h-24 text-[var(--text-primary)]/8 group-hover:text-[var(--text-primary)]/15 transition-colors duration-500"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        *ngIf="type.includes('Mobile')"
+        d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"
+      />
+      <path
+        *ngIf="type === 'Web' || type === 'Web & Mobile'"
+        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8h16v10z"
+      />
+    </svg>
+
+    <!-- Pattern Overlay -->
     <div
-        class="relative h-64 sm:h-80 w-full mb-8 rounded-3xl overflow-hidden bg-[var(--text-primary)]/5 border border-[var(--secondary-primary)]/10">
-        <!-- Placeholder Geometric Pattern/Icon -->
-        <div class="absolute inset-0 flex items-center justify-center">
-            <!-- Dynamic geometric shape based on title/id (mocked with SVG) -->
-            <svg class="w-32 h-32 text-[var(--text-primary)]/5 group-hover:text-[var(--text-primary)]/10 transition-colors duration-500"
-                fill="currentColor" viewBox="0 0 24 24">
-                <path *ngIf="title.includes('E-commerce')"
-                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                <path *ngIf="title.includes('Fitness')"
-                    d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-                <path *ngIf="title.includes('Website')"
-                    d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z" />
-                <path *ngIf="title.includes('Marketing')"
-                    d="M12 2L2 9l10 7 10-7-10-7zm0 14l-10-7v9l10 7 10-7v-9l-10 7z" />
-            </svg>
-        </div>
+      class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"
+    ></div>
+  </div>
 
-        <!-- Pattern Overlay -->
-        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
-
-        <!-- Hover Overlay & Button -->
-        <div
-            class="absolute inset-0 bg-[var(--bg-dark)]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
-            <button
-                class="bg-[var(--accent-primary)]/10 hover:bg-[var(--accent-primary)]/20 text-[var(--text-primary)] backdrop-blur-md px-6 py-2 rounded-full text-sm font-medium flex items-center gap-2 transition-all translate-y-4 group-hover:translate-y-0 duration-300">
-                View Project Details
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-            </button>
-        </div>
+  <!-- Content -->
+  <div class="flex-1 flex flex-col">
+    <!-- Title + Role -->
+    <div class="mb-3">
+      <h3
+        class="text-lg font-bold text-[var(--text-primary)] group-hover:text-[var(--text-primary)]/80 transition-colors leading-snug mb-1"
+      >
+        {{ title }}
+      </h3>
+      <p
+        *ngIf="role"
+        class="text-xs text-[var(--accent-primary)]/80 font-semibold uppercase tracking-wider"
+      >
+        {{ role }}
+      </p>
     </div>
 
-    <!-- Content -->
-    <div>
-        <h3
-            class="text-xl font-bold text-[var(--text-primary)] mb-2 group-hover:text-[var(--text-primary)]/80 transition-colors">
-            {{ title }}</h3>
-
-        <div
-            class="flex justify-between items-center text-xs uppercase tracking-wider text-[var(--text-primary)]/50 mb-4 font-semibold">
-            <span>Category: <span class="text-[var(--text-primary)]/70">{{ category }}</span></span>
-            <span>{{ date }}</span>
-        </div>
-
-        <p class="text-[var(--text-primary)]/60 text-sm leading-relaxed line-clamp-3">
-            {{ description }}
-        </p>
+    <!-- Category + Date -->
+    <div
+      class="flex justify-between items-center text-[10px] uppercase tracking-wider text-[var(--text-primary)]/40 mb-4 font-semibold"
+    >
+      <span>{{ category }}</span>
+      <span>{{ date }}</span>
     </div>
+
+    <!-- Description -->
+    <p class="text-[var(--text-primary)]/60 text-sm leading-relaxed line-clamp-3 mb-5 flex-1">
+      {{ description }}
+    </p>
+
+    <!-- Tech Stack Tags -->
+    <div *ngIf="tags.length" class="flex flex-wrap gap-2 mt-auto">
+      <span
+        *ngFor="let tag of tags"
+        class="text-[10px] font-medium px-2.5 py-1 rounded-full bg-[var(--text-primary)]/8 text-[var(--text-primary)]/60 border border-[var(--text-primary)]/10"
+      >
+        {{ tag }}
+      </span>
+    </div>
+  </div>
 </div>
